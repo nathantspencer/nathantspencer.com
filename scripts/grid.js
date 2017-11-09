@@ -7,11 +7,12 @@ window.addEventListener("load", createGrid, false);
 window.addEventListener("resize", createGrid, false);
 
 var grid = [];
-var boxSize = 25;
+var boxSize = 15;
 var numberOfBoxesX;
 var numberOfBoxesY;
 
 var grayRange = [225, 232];
+var darkGrayRange = [215, 230]
 
 // Creates a grid of the current window size or expands existing grid
 function createGrid()
@@ -53,13 +54,13 @@ function mouseFieldEffect(e)
 	for (var i = -1; i < 2; ++i)
 	{
 		var gridBox = grid[e.target.x + i][e.target.y];
-		gridBox.style.backgroundColor = grayInRange(grayRange[0], grayRange[1]);
+		gridBox.style.backgroundColor = grayInRange(darkGrayRange[0], darkGrayRange[1]);
 	}
 
 	for (var j = -1; j < 2; ++j)
 	{
 		var gridBox = grid[e.target.x][e.target.y + j];
-		gridBox.style.backgroundColor = grayInRange(grayRange[0], grayRange[1]);
+		gridBox.style.backgroundColor = grayInRange(darkGrayRange[0], darkGrayRange[1]);
 	}
 }
 
