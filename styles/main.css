@@ -1,0 +1,71 @@
+/* Start of Element Styles */
+
+html
+{
+	margin: 0;
+}
+
+body
+{
+	margin: 0;
+}
+
+
+
+/* Start of Class Styles */
+
+.viewport-box
+{
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	text-align: center;
+	z-index: 1;
+}
+
+.grid-box
+{
+	position: absolute;
+}
+
+div.grid-box:hover
+{
+	background-color: green !important;
+}
+
+/* Start of ID Styles */
+
+#avatar-box
+{
+	position: absolute;
+	height: 175px;
+	width: 175px;
+	top: 40%;
+	left: 50%;
+	margin-left: -87.5px;
+	margin-top: -125px;
+	z-index: 2;
+}
+
+#avatar-label
+{
+	pointer-events: none;
+	width: 100%;
+	position: absolute;
+	color: rgb(90, 90, 90);
+	font-family: "Lucida Console", Monaco, monospace;
+	font-weight: lighter;
+	font-size: 40px;
+	top: 40%;
+	padding-top: 45px;
+	z-index: 2;
+}
+
+#avatar
+{
+	height: 100%;
+	width: 100%;
+	border: solid 2px rgb(90, 90, 90);
+	border-radius: 7.5px;
+	z-index: 2;
+}
