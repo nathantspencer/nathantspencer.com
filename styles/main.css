@@ -26,11 +26,7 @@ body
 .grid-box
 {
 	position: absolute;
-}
-
-div.grid-box:hover
-{
-	background-color: green !important;
+	cursor: pointer;
 }
 
 /* Start of ID Styles */
@@ -55,9 +51,9 @@ div.grid-box:hover
 	color: rgb(90, 90, 90);
 	font-family: "Lucida Console", Monaco, monospace;
 	font-weight: lighter;
-	font-size: 40px;
+	font-size: 35px;
 	top: 40%;
-	padding-top: 45px;
+	padding-top: 60px;
 	z-index: 2;
 }
 
@@ -65,7 +61,7 @@ div.grid-box:hover
 {
 	height: 100%;
 	width: 100%;
-	border: solid 2px rgb(90, 90, 90);
-	border-radius: 7.5px;
+	border: solid 4px rgb(90, 90, 90);
+	border-radius: 100.5px;
 	z-index: 2;
 }
