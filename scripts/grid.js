@@ -31,8 +31,8 @@ function createGrid()
 			grid[i][j] = document.createElement("div");
 			grid[i][j].className = "grid-box"
 
-			grid[i][j].style.width = boxWidth + "px";
-			grid[i][j].style.height = boxHeight + "px";
+			grid[i][j].style.width = Math.ceil(boxWidth) + "px";
+			grid[i][j].style.height = Math.ceil(boxHeight) + "px";
 			grid[i][j].style.left = (i * boxWidth) + "px";
 			grid[i][j].style.top = (j * boxHeight) + "px";
 
