@@ -21,6 +21,7 @@ body
 	position: relative;
 	text-align: center;
 	z-index: 1;
+	cursor: pointer;
 }
 
 .grid-box
@@ -71,6 +72,19 @@ body
 
 #avatar:hover
 {
-	filter: brightness(75%);
+	filter: brightness(60%);
+	transition: 0.25s;
+}
+
+#github-logo-overlay
+{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 175px;
+	width: 175px;
+	border: 4px solid rgba(0, 0, 0, 0);
+	z-index: 2;
 	transition: 0.25s;
 }

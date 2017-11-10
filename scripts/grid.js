@@ -53,14 +53,26 @@ function mouseFieldEffect(e)
 {
 	for (var i = -1; i < 2; ++i)
 	{
-		var gridBox = grid[e.target.x + i][e.target.y];
-		gridBox.style.backgroundColor = grayInRange(darkGrayRange[0], darkGrayRange[1]);
+		var isBeforeGrid = e.target.x + i< 0;
+		var isAfterGrid = e.target.x + i >= grid.length;
+
+		if (!isBeforeGrid && !isAfterGrid)
+		{
+			var gridBox = grid[e.target.x + i][e.target.y];
+			gridBox.style.backgroundColor = grayInRange(darkGrayRange[0], darkGrayRange[1]);
+		}
 	}
 
 	for (var j = -1; j < 2; ++j)
 	{
-		var gridBox = grid[e.target.x][e.target.y + j];
-		gridBox.style.backgroundColor = grayInRange(darkGrayRange[0], darkGrayRange[1]);
+		var isBeforeGrid = e.target.y + j < 0;
+		var isAfterGrid = e.target.y + j >= grid[e.target.x].length;
+
+		if (!isBeforeGrid && !isAfterGrid)
+		{
+			var gridBox = grid[e.target.x][e.target.y + j];
+			gridBox.style.backgroundColor = grayInRange(darkGrayRange[0], darkGrayRange[1]);
+		}
 	}
 }
 
