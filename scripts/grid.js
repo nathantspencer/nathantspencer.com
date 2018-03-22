@@ -6,6 +6,8 @@
 window.addEventListener("load", createGrid, false);
 window.addEventListener("resize", createGrid, false);
 
+var root = document.getElementById("viewport-box-1");
+
 var grid = [];
 var boxSize = 15;
 var numberOfBoxesX;
@@ -17,11 +19,10 @@ var darkGrayRange = [215, 230]
 // Creates a grid of the current window size or expands existing grid
 function createGrid()
 {
-	var root = document.getElementById("viewport-box-1");
-
 	numberOfBoxesX = Math.ceil(window.innerWidth / boxSize);
 	numberOfBoxesY = Math.ceil(window.innerHeight / boxSize);
 
+	// Add new boxes as needed
 	for (var i = 0; i < numberOfBoxesX; ++i)
 	{
 		if(i >= grid.length)
@@ -44,6 +45,20 @@ function createGrid()
 
 			grid[i][j].addEventListener("mouseover", mouseFieldEffect, false);
 			root.appendChild(grid[i][j]);
+		}
+	}
+
+	// Prune old, no longer needed boxes
+	for (var i = 0; i < grid.length; ++i)
+	{
+		for (var j = 0; j < grid[0].length; ++j)
+		{
+			if (i >= numberOfBoxesX || j >= numberOfBoxesY)
+			{
+				console.log("childRemoved");
+				root.removeChild(grid[i][j]);
+				grid[i].splice(j--, 1);
+			}
 		}
 	}
 }
@@ -100,5 +115,7 @@ function grayInRange(minIntensity, maxIntensity)
 	result = "rgb(" + intensity + ", " + intensity + ", " + intensity + ")";
 	return result;
 }
+
+// when color waves come, keep value of cell, change only hue
 
 })();
